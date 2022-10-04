@@ -14,6 +14,7 @@ func twoSum(nums []int, target int) []int {
 	m := make(map[int]int, 0)
 	for i, v := range nums {
 		if mi, ok := m[v]; ok {
+			fmt.Println(m)
 			return []int{mi, i}
 		} else {
 			m[target-v] = i //需額外儲存n個數的對應map ，空間複雜度為O(n)
@@ -36,7 +37,7 @@ func StartTwoSum() {
 }
 
 func testcast1() (input []int, target int, output []int) {
-	input = []int{2, 7, 11, 15}
+	input = []int{2, 11, 7, 0}
 	target = 9
 	output = []int{0, 1}
 	return input, target, output
